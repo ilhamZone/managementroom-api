@@ -38,4 +38,4 @@ app.group('/api/v2', (router) => {
  router.delete('/checkout/:id', authenticated, OrderController.CheckOut);
 });
 
-app.listen(port, () => console.log(`Server running on port ${port}!`));
+app.listen(process.env.PORT||9876, function(){ console.log('Listening on port!!') });
