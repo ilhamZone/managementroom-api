@@ -7,6 +7,7 @@ const Order = models.order;
 exports.ShowCheckin = async (req, res) => {
   const find = await Room.findAll({
     attributes: ['id', 'name'],
+    order: [['name', 'ASC']],
     include: [{
       model: Order,
       as: 'Order',
