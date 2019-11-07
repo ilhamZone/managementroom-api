@@ -2,7 +2,7 @@ const models = require('../models');
 const Room = models.room;
 
 exports.ShowRoom = (req, res) => {
-  Room.findAll().then(result => res.send(result));
+  Room.findAll({ order: [['name', 'ASC']] }).then(result => res.send(result));
 };
 
 exports.StoreRoom = (req, res) => {
