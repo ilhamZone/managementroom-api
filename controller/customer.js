@@ -3,7 +3,7 @@ const models = require('../models');
 const Customer = models.customer;
 
 exports.ShowCostumer = (req, res) => {
-  Customer.findAll().then(result => res.send(result));
+  Customer.findAll({ order: [['name', 'ASC']] }).then(result => res.send(result));
 };
 
 exports.StoreCustomer = (req, res) => {
