@@ -18,3 +18,17 @@ exports.UpdateRoom = (req, res) => {
   Room.update(req.body, { where: { id: req.params.id } }).then(res.send(req.body));
 };
 
+exports.DeleteRoom = (req, res) => {
+  Room.destroy({ where: { id: req.params.id } })
+    .then(result => {
+      res.send({
+        message: 'Delete Successfully',
+        result
+      });
+    }).catch(err => {
+      res.send({
+        message: 'Cannot Remove Room',
+        err
+      });
+    });
+}
