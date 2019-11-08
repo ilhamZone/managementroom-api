@@ -26,6 +26,7 @@ app.group('/api/v2', (router) => {
  router.get('/room', authenticated, RoomController.ShowRoom);
  router.post('/room', authenticated, RoomController.StoreRoom);
  router.patch('/room/:id', authenticated, RoomController.UpdateRoom);
+ router.delete('/room/:id', authenticated, RoomController.DeleteRoom);
 
  // Customer
  router.get('/customers', authenticated, CustomerController.ShowCostumer);
