@@ -32,6 +32,7 @@ app.group('/api/v2', (router) => {
  router.get('/customers', authenticated, CustomerController.ShowCostumer);
  router.post('/customers', authenticated, CustomerController.StoreCustomer);
  router.patch('/customers/:id', authenticated, CustomerController.UpdateCustomer);
+ router.delete('/customers/:id', authenticated, CustomerController.DeleteCustomer);
 
  // Order 
  router.get('/checkin', authenticated, OrderController.ShowCheckin);
